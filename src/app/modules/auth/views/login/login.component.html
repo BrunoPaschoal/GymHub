@@ -1,0 +1,21 @@
+<div class="card">
+  <p-calendar [(ngModel)]="date"></p-calendar>
+
+  <button pButton pRipple label="Submit" class="btnn"></button>
+
+  <p-cascadeSelect
+    [(ngModel)]="selectedCity"
+    [options]="countries"
+    optionLabel="cname"
+    optionGroupLabel="name"
+    [optionGroupChildren]="['states', 'cities']"
+    [style]="{ minWidth: '14rem' }"
+    placeholder="Select a City"
+  ></p-cascadeSelect>
+
+  <p-checkbox
+    [(ngModel)]="checked"
+    [binary]="true"
+    inputId="binary"
+  ></p-checkbox>
+</div>

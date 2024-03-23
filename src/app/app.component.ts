@@ -1,13 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { PrimeNGConfig } from 'primeng/api';
+import { PtBrTranslation } from './Common/helpers/translations';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  template: `<router-outlet />`,
 })
-export class AppComponent {
-  title = 'gym-hub';
+export class AppComponent implements OnInit {
+  title = 'GymHub';
+
+  constructor(private config: PrimeNGConfig) {}
+
+  ngOnInit(): void {
+    this.config.setTranslation(PtBrTranslation);
+  }
 }
