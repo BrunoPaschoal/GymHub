@@ -10,3 +10,11 @@ body {
 .border-helper {
   border: solid red 1px;
 }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
