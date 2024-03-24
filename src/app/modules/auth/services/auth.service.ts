@@ -5,7 +5,7 @@ import { User } from '../../../Common/interfaces/UserTypes';
 @Injectable({
   providedIn: 'root',
 })
-export class AuthenticationService {
+export class AuthService {
   public user: User | undefined;
   public userIsLogged: boolean = false;
 
@@ -34,7 +34,7 @@ export class AuthenticationService {
           localStorage.clear();
           resolve(false);
         }
-      }, 1000);
+      }, 300);
     });
   }
 
@@ -49,7 +49,7 @@ export class AuthenticationService {
       localStorage.setItem('user', JSON.stringify(this.user));
       this.userIsLogged = true;
       this.router.navigate(['']);
-    }, 1000);
+    }, 300);
   }
 
   logout() {
