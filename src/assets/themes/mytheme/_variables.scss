@@ -8,6 +8,7 @@ $primaryTextColor: #ffffff;
 $SecundaryColor: #FF6D60;
 $SecundaryDarkColor: #FF897F;
 $SecundaryDarkerColor: #D6584D;
+$backgroundColor: #EDECF2;
 
 
 $colors: (
@@ -50,6 +51,7 @@ $colors: (
     --text-color-secondary:#6c757d;
     --primary-color:#{$primaryColor};
     --primary-color-text:#ffffff;
+    --background-color: #{$backgroundColor};
     --surface-0: #ffffff;
     --surface-50: #FAFAFA;
     --surface-100: #F5F5F5;
