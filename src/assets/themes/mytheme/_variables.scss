@@ -5,9 +5,9 @@ $primaryDarkerColor: #22213F;
 $primaryTextColor: #ffffff;
 
 // OTHER VARIABLES
-$SecundaryColor: #FF6D60;
-$SecundaryDarkColor: #FF897F;
-$SecundaryDarkerColor: #D6584D;
+$secundaryColor: #FF6D60;
+$secundaryDarkColor: #FF897F;
+$secundaryDarkerColor: #D6584D;
 $backgroundColor: #EDECF2;
 
 
@@ -51,6 +51,7 @@ $colors: (
     --text-color-secondary:#6c757d;
     --primary-color:#{$primaryColor};
     --primary-color-text:#ffffff;
+    --secundary-color: #{$secundaryColor};
     --background-color: #{$backgroundColor};
     --surface-0: #ffffff;
     --surface-50: #FAFAFA;

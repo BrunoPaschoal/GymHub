@@ -1,3 +1,25 @@
-<div class="card">
-  <button pButton pRipple label="Login" (click)="login()" class="btnn"></button>
+<div class="container">
+  <section class="left-section">
+    <img
+      src="assets/img/login-image.svg"
+      alt="login-image"
+      class="login-image"
+    />
+  </section>
+  <section class="right-section">
+    <div class="content-container">
+      <div class="logo-header-container">
+        <img src="assets/img/logo-darker.svg" alt="gym-hub-logo" />
+        <h1>Bem-vindo ao <span>GymHub</span></h1>
+      </div>
+
+      <form>
+        <div class="flex flex-column gap-2">
+          <label for="username">E-mail</label>
+          <input pInputText id="username" aria-describedby="username-help" />
+        </div>
+      </form>
+      <button pButton pRipple label="Login" (click)="login()"></button>
+    </div>
+  </section>
 </div>

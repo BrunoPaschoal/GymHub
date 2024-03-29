@@ -7,7 +7,6 @@ import { AuthService } from '../../services/auth.service';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent implements OnInit {
-  selectedCity: any;
   constructor(private authService: AuthService) {}
 
   ngOnInit() {}
