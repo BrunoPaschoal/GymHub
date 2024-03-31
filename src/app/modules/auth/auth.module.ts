@@ -4,10 +4,11 @@ import { LoginComponent } from './views/login/login.component';
 import { SigninComponent } from './views/signin/signin.component';
 import { RouterModule } from '@angular/router';
 import { authRoutes } from './auth.routes';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { ImageModule } from 'primeng/image';
+import { PasswordModule } from 'primeng/password';
 
 @NgModule({
   declarations: [LoginComponent, SigninComponent],
@@ -15,8 +16,9 @@ import { ImageModule } from 'primeng/image';
     CommonModule,
     ButtonModule,
     ImageModule,
-    FormsModule,
     InputTextModule,
+    PasswordModule,
+    ReactiveFormsModule,
     RouterModule.forChild(authRoutes),
   ],
 })

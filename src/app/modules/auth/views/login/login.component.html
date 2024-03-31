@@ -13,18 +13,21 @@
         <h1>Bem-vindo ao <span>GymHub</span></h1>
       </div>
 
-      <form class="form-group">
+      <form class="form-group p-fluid" [formGroup]="loginForm" (ngSubmit)="login()">
         <div class="input-container">
           <label for="username">E-mail</label>
-          <input pInputText id="username" placeholder="seuemail@email.com" />
+          <input pInputText placeholder="seuemail@email.com" formControlName="email"/>
+          <!-- <small class="p-error">Campo obrigatório.</small> -->
         </div>
 
         <div class="input-container">
           <label for="password">Senha</label>
-          <input pInputText id="password" placeholder="********" />
+          <p-password [toggleMask]="true" [feedback]="false" placeholder="Sua senha" formControlName="password"></p-password>
+          <!-- <small class="p-error">Campo obrigatório.</small> -->
         </div>
+        <button pButton pRipple label="Login" [loading]="false " type="submit"></button>
       </form>
-      <button pButton pRipple label="Login" [loading]="false " (onClick)="login()"></button>
+      
     </div>
   </section>
 </div>
