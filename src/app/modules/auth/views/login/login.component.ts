@@ -1,25 +1,48 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Observable, finalize, of } from 'rxjs';
+import { LoginResponseType } from '../../interfaces/authInterfaces';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
-export class LoginComponent implements OnInit {
-  loginForm: FormGroup = new FormGroup({ 
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required])
+export class LoginComponent {
+  loginResult$: Observable<LoginResponseType | null> = of(null);
+  isLoading: boolean = false;
+
+  constructor(private authService: AuthService, private form: FormBuilder) {}
+
+  protected loginForm = this.form.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', Validators.required],
   });
 
-  constructor(private authService: AuthService) {}
+  onLogin(): void {
+    if (!this.loginForm.valid) {
+      this.loginForm.markAllAsTouched();
+      return;
+    }
 
-  ngOnInit() {}
+    this.isLoading = true;
 
-  login() {
+    this.loginResult$ = this.authService
+      .login({
+        email: this.loginForm.value.email!,
+        password: this.loginForm.value.password!,
+      })
+      .pipe(
+        finalize(() => {
+          this.isLoading = false;
+        })
+      );
 
-    console.log(this.loginForm.hasError);
-    // this.authService.login();
+    this.loginResult$.subscribe({
+      error: ({ error }) => {
+        alert(error?.messag);
+      },
+    });
   }
 }

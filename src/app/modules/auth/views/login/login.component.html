@@ -13,21 +13,60 @@
         <h1>Bem-vindo ao <span>GymHub</span></h1>
       </div>
 
-      <form class="form-group p-fluid" [formGroup]="loginForm" (ngSubmit)="login()">
+      <form
+        class="form-group p-fluid"
+        [formGroup]="loginForm"
+        (ngSubmit)="onLogin()"
+      >
         <div class="input-container">
-          <label for="username">E-mail</label>
-          <input pInputText placeholder="seuemail@email.com" formControlName="email"/>
-          <!-- <small class="p-error">Campo obrigatório.</small> -->
+          <label for="email">E-mail</label>
+          <input
+            pInputText
+            placeholder="seuemail@email.com"
+            formControlName="email"
+          />
+
+          <small
+            *ngIf="this.loginForm.controls.email.touched &&
+          this.loginForm.controls.email.errors?.['required']"
+            class="p-error"
+          >
+            Campo obrigatório.
+          </small>
+
+          <small
+            *ngIf="this.loginForm.controls.email.touched &&
+          this.loginForm.controls.email.errors?.['email']"
+            class="p-error"
+          >
+            Email inválido.
+          </small>
         </div>
 
         <div class="input-container">
           <label for="password">Senha</label>
-          <p-password [toggleMask]="true" [feedback]="false" placeholder="Sua senha" formControlName="password"></p-password>
-          <!-- <small class="p-error">Campo obrigatório.</small> -->
+          <p-password
+            [toggleMask]="true"
+            [feedback]="false"
+            placeholder="Sua senha"
+            formControlName="password"
+          ></p-password>
+
+          <small
+            *ngIf="this.loginForm.controls.password.touched &&
+          this.loginForm.controls.password.errors?.['required']"
+            class="p-error"
+            >Campo obrigatório.</small
+          >
         </div>
-        <button pButton pRipple label="Login" [loading]="false " type="submit"></button>
+        <button
+          pButton
+          pRipple
+          label="Login"
+          [loading]="isLoading"
+          type="submit"
+        ></button>
       </form>
-      
     </div>
   </section>
 </div>

@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../../../Common/interfaces/UserTypes';
+import { HttpClient } from '@angular/common/http';
+import { Observable, tap } from 'rxjs';
+import { LoginArgs, LoginResponseType } from '../interfaces/authInterfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -8,10 +11,11 @@ import { User } from '../../../Common/interfaces/UserTypes';
 export class AuthService {
   public user: User | undefined;
   public userIsLogged: boolean = false;
+  private loginUrl: string = 'http://localhost:3000/login';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private http: HttpClient) {}
 
-  isAuthenticated(): Promise<boolean> {
+  public isAuthenticated(): Promise<boolean> {
     return new Promise((resolve) => {
       setTimeout(() => {
         if (this.userIsLogged) {
@@ -38,18 +42,28 @@ export class AuthService {
     });
   }
 
-  login() {
-    setTimeout(() => {
-      this.user = {
-        name: 'Bruno Rocha',
-        email: 'bruno@email',
-        token: 'Bearer jiosajiosasa',
-      };
+  public login({ email, password }: LoginArgs): Observable<LoginResponseType> {
+    return this.http
+      .post<LoginResponseType>(this.loginUrl, {
+        email,
+        password,
+      })
+      .pipe(
+        tap((res) => {
+          this.handleAuthentication({
+            name: res.name,
+            email: res.email,
+            avatar: res?.avatar,
+            token: res.token,
+          });
+        })
+      );
+  }
 
-      localStorage.setItem('user', JSON.stringify(this.user));
-      this.userIsLogged = true;
-      this.router.navigate(['']);
-    }, 300);
+  private handleAuthentication(user: User): void {
+    localStorage.setItem('user', JSON.stringify(user));
+    this.userIsLogged = true;
+    this.router.navigate(['']);
   }
 
   logout() {
