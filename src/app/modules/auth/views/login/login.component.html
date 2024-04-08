@@ -10,7 +10,7 @@
     <div class="content-container">
       <div class="logo-header-container">
         <img src="assets/img/logo-darker.svg" alt="gym-hub-logo" />
-        <h1>Bem-vindo ao <span>GymHub</span></h1>
+        <app-dual-color-title title="Bem vindo ao" highlightedPart="GymHub" />
       </div>
 
       <form
@@ -21,6 +21,7 @@
         <div class="input-container">
           <label for="email">E-mail</label>
           <input
+            id="email"
             pInputText
             placeholder="seuemail@email.com"
             formControlName="email"

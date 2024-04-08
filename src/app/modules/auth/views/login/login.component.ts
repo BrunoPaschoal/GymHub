@@ -16,7 +16,10 @@ export class LoginComponent {
   constructor(private authService: AuthService, private form: FormBuilder) {}
 
   protected loginForm = this.form.group({
-    email: ['', [Validators.required, Validators.email]],
+    email: [
+      '',
+      { validators: [Validators.required, Validators.email], updateOn: 'blur' },
+    ],
     password: ['', Validators.required],
   });
 

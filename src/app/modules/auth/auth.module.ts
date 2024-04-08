@@ -9,6 +9,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { ImageModule } from 'primeng/image';
 import { PasswordModule } from 'primeng/password';
+import { DualColorTitleComponent } from '../../Common/components/dual-color-title/dual-color-title.component';
 
 @NgModule({
   declarations: [LoginComponent, SigninComponent],
@@ -20,6 +21,7 @@ import { PasswordModule } from 'primeng/password';
     PasswordModule,
     ReactiveFormsModule,
     RouterModule.forChild(authRoutes),
+    DualColorTitleComponent,
   ],
 })
 export class AuthModule {}
