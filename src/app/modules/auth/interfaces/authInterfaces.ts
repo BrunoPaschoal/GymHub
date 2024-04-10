@@ -6,6 +6,7 @@ export type LoginArgs = {
 export type LoginResponseType = {
   name: string;
   email: string;
+  role: string;
   avatar: string | undefined;
   token: string;
 };

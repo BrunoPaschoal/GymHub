@@ -2,14 +2,15 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../../../Common/interfaces/UserTypes';
 import { HttpClient } from '@angular/common/http';
-import { Observable, tap } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { LoginArgs, LoginResponseType } from '../interfaces/authInterfaces';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  public user: User | undefined;
+  private userSubject = new BehaviorSubject<User | undefined>(undefined);
+  public user = this.userSubject.asObservable();
   public userIsLogged: boolean = false;
   private loginUrl: string = 'http://localhost:3000/login';
 
@@ -29,9 +30,10 @@ export class AuthService {
           return;
         }
         const userParsed = JSON.parse(user);
-        this.user = userParsed;
 
-        if (this.user?.token) {
+        this.userSubject.next(userParsed);
+
+        if (userParsed?.token) {
           this.userIsLogged = true;
           resolve(true);
         } else {
@@ -55,6 +57,7 @@ export class AuthService {
             email: res.email,
             avatar: res?.avatar,
             token: res.token,
+            role: res.role,
           });
         })
       );
@@ -63,11 +66,13 @@ export class AuthService {
   private handleAuthentication(user: User): void {
     localStorage.setItem('user', JSON.stringify(user));
     this.userIsLogged = true;
+    this.userSubject.next(user);
     this.router.navigate(['']);
   }
 
   logout() {
     localStorage.clear();
+    this.userSubject.next(undefined);
     this.userIsLogged = false;
     this.router.navigate(['auth/login']);
   }

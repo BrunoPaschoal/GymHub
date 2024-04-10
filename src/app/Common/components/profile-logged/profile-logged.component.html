@@ -1,0 +1,18 @@
+<div class="icons-container">
+  <img src="assets/icons/message.svg" alt="message-icon" />
+  <img src="assets/icons/bell.svg" alt="notification-icon" />
+</div>
+<div class="divisor"></div>
+<div class="logged-user-container">
+  <div class="user-info-container">
+    <strong>{{ userName }}</strong>
+    <em> {{ role }}</em>
+  </div>
+  <p-avatar
+    [image]="avatarUrl || undefined"
+    size="large"
+    [icon]="!avatarUrl ? 'pi pi-user' : ''"
+    shape="circle"
+    class="avatar"
+  ></p-avatar>
+</div>

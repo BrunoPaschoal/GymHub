@@ -1,7 +1,16 @@
 <div class="side-menu-container"></div>
 
 <div class="right-container">
-  <header class="header-bar"></header>
+  <header class="header-bar">
+    <aside class="page-title-container">{{ pageTitle }}</aside>
+    <aside class="header-right-content">
+      <app-profile-logged
+        [userName]="userName"
+        [avatarUrl]="avatarUrl"
+        [role]="role"
+      />
+    </aside>
+  </header>
   <div class="app-container">
     <router-outlet />
   </div>

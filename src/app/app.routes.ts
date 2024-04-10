@@ -17,6 +17,7 @@ export const routes: Routes = [
         loadChildren: () =>
           import('./modules/home/home.module').then((m) => m.HomeModule),
         canActivate: [authGuard],
+        data: { pageTitle: 'Dashboard', icon: 'home-icon' },
       },
     ],
   },
