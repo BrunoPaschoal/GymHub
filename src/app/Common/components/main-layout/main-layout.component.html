@@ -2,8 +2,11 @@
 
 <div class="right-container">
   <header class="header-bar">
-    <aside class="page-title-container">{{ pageTitle }}</aside>
-    <aside class="header-right-content">
+    <aside class="header-left-content">
+      <fa-icon class="icon" [icon]="currentIcon"></fa-icon>
+      <span class="page-title">{{ pageTitle }}</span>
+    </aside>
+    <aside>
       <app-profile-logged
         [userName]="userName"
         [avatarUrl]="avatarUrl"
