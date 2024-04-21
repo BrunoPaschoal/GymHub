@@ -1,0 +1,16 @@
+<img src="/assets/img/logo-light-typograph.svg" alt="logo" class="logo" />
+
+<div class="menu-container">
+  @for (item of itemsList; track item.categoryName) {
+  <span class="category">{{ item.categoryName }}</span>
+  <div class="sub-items-container">
+    @for (subItem of item.menuItems; track subItem.title) {
+    <app-menu-item
+      [icon]="subItem.icon"
+      [title]="subItem.title"
+      [path]="subItem.path"
+    />
+    }
+  </div>
+  }
+</div>

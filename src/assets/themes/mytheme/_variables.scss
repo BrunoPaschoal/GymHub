@@ -1,7 +1,7 @@
 // Theme Specific Variables
 $primaryColor: #373660;
 $primaryDarkColor: #56557B;
-$primaryDarkerColor: #22213F;
+$primaryDarkerColor: #1C1C27;
 $primaryTextColor: #ffffff;
 
 // OTHER VARIABLES
@@ -9,6 +9,8 @@ $secundaryColor: #FF6D60;
 $secundaryDarkColor: #FF897F;
 $secundaryDarkerColor: #D6584D;
 $backgroundColor: #EDECF2;
+
+$primaryDarkerColorSelected: #22213F;
 
 $inputBorderColor: #D7D7D7;
 
@@ -51,6 +53,8 @@ $colors: (
     --text-color:#495057;
     --text-color-secondary:#6c757d;
     --primary-color:#{$primaryColor};
+    --primary-darker-color:#{$primaryDarkerColor};
+    --primary-darker-color-selected:#{$primaryDarkerColorSelected};
     --primary-color-text:#ffffff;
     --secundary-color: #{$secundaryColor};
     --background-color: #{$backgroundColor};

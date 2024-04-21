@@ -5,11 +5,17 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AuthService } from '../../../modules/auth/services/auth.service';
 import { Subscription } from 'rxjs';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { SideMenuComponent } from '../side-menu/side-menu.component';
 
 @Component({
   selector: 'app-main-layout',
   standalone: true,
-  imports: [RouterOutlet, ProfileLoggedComponent, FontAwesomeModule],
+  imports: [
+    RouterOutlet,
+    ProfileLoggedComponent,
+    FontAwesomeModule,
+    SideMenuComponent,
+  ],
   templateUrl: './main-layout.component.html',
   styleUrl: './main-layout.component.scss',
 })
