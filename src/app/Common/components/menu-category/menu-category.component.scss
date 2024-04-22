@@ -1,12 +1,29 @@
 :host {
-  .category {
-    font-size: 1rem;
-    font-weight: 600;
-    color: white;
-  }
+  .category-container {
+    padding: 5px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: opacity 100ms ease-in-out;
 
+    .icon {
+      color: white;
+      font-size: 0.7rem;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+    .category {
+      font-size: .9rem;
+      font-weight: 600;
+      color: white;
+    }
+  }
   .sub-items-container {
-    margin: 10px 0 20px 0px;
+    margin: 5px 0 10px 0;
+    overflow: hidden;
     display: flex;
     gap: 2px;
     flex-direction: column;

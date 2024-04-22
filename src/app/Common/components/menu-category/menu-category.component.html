@@ -1,5 +1,12 @@
-<span class="category">{{ menuData.categoryName }}</span>
-<div class="sub-items-container">
+<div class="category-container" (click)="toggle()">
+  <span class="category">{{ menuData.categoryName }}</span>
+  <fa-icon class="icon" [icon]="isExpanded ? arrowDown : arrowRight"></fa-icon>
+</div>
+
+<div
+  [@expandCollapse]="isExpanded ? 'expanded' : 'collapsed'"
+  class="sub-items-container"
+>
   @for (subItem of menuData.menuItems; track subItem.title) {
   <app-menu-item [menuItem]="subItem" />
   }
