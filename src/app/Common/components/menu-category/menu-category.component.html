@@ -1,0 +1,6 @@
+<span class="category">{{ menuData.categoryName }}</span>
+<div class="sub-items-container">
+  @for (subItem of menuData.menuItems; track subItem.title) {
+  <app-menu-item [menuItem]="subItem" />
+  }
+</div>

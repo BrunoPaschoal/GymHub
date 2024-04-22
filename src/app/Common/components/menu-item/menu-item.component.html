@@ -1,6 +1,6 @@
-<a [routerLink]="path" routerLinkActive="selected" class="menu-item">
+<a [routerLink]="menuItem.path" routerLinkActive="selected" class="menu-item">
   <div class="icon-container">
-    <fa-icon class="icon" [icon]="icon"></fa-icon>
+    <fa-icon class="icon" [icon]="menuItem.icon"></fa-icon>
   </div>
-  <span class="menu-item-title">{{ title }}</span>
+  <span class="menu-item-title">{{ menuItem.title }}</span>
 </a>

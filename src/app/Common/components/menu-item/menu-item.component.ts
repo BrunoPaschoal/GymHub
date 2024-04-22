@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { IMenuItem } from '../../interfaces/AppTypes';
 
 @Component({
   selector: 'app-menu-item',
@@ -11,7 +11,5 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
   styleUrl: './menu-item.component.scss',
 })
 export class MenuItemComponent {
-  @Input({ required: true }) title!: string;
-  @Input({ required: true }) icon!: IconProp;
-  @Input({ required: true }) path!: string;
+  @Input({ required: true }) menuItem!: IMenuItem;
 }

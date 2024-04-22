@@ -7,9 +7,9 @@ import {
   faWallet,
   faUserGear,
 } from '@fortawesome/free-solid-svg-icons';
-import { IMenuitens } from '../interfaces/AppTypes';
+import { IMenuCategory } from '../interfaces/AppTypes';
 
-export const MENU_ITEMS: IMenuitens[] = [
+export const MENU_DATA: IMenuCategory[] = [
   {
     categoryName: 'Dashboard',
     menuItems: [

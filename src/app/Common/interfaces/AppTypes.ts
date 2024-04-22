@@ -1,10 +1,12 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
-export interface IMenuitens {
+export interface IMenuCategory {
   categoryName: string;
-  menuItems: {
-    path: string;
-    title: string;
-    icon: IconProp;
-  }[];
+  menuItems: IMenuItem[];
+}
+
+export interface IMenuItem {
+  path: string;
+  title: string;
+  icon: IconProp;
 }
