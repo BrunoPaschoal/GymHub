@@ -4,6 +4,7 @@ import { User } from '../../../Common/interfaces/UserTypes';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { LoginArgs, LoginResponseType } from '../interfaces/authInterfaces';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +13,7 @@ export class AuthService {
   private userSubject = new BehaviorSubject<User | undefined>(undefined);
   public user = this.userSubject.asObservable();
   public userIsLogged: boolean = false;
-  private loginUrl: string = 'http://localhost:3000/login';
+  private loginUrl: string = `${environment.baseApiUrl}/login`;
 
   constructor(private router: Router, private http: HttpClient) {}
 
