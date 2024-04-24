@@ -3,7 +3,9 @@
   <img class="bell" src="assets/icons/bell.svg" alt="notification-icon" />
 </div>
 <div class="divisor"></div>
-<div class="logged-user-container">
+<p-menu #menu [model]="contextMenuItems" [popup]="true"></p-menu>
+
+<div class="logged-user-container" (click)="menu.toggle($event)">
   <div class="user-info-container">
     <strong>{{ userName }}</strong>
     <em> {{ role }}</em>

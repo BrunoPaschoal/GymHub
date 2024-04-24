@@ -10,3 +10,9 @@ export interface IMenuItem {
   title: string;
   icon: IconProp;
 }
+
+export interface ContextMenuItems {
+  label: string;
+  icon: string;
+  command: () => void;
+}
