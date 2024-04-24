@@ -67,7 +67,7 @@ export class AuthService {
     localStorage.setItem('user', JSON.stringify(user));
     this.userIsLogged = true;
     this.userSubject.next(user);
-    this.router.navigate(['']);
+    this.router.navigate(['home']);
   }
 
   logout() {

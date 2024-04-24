@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './guards/auth.guard';
 import { MainLayoutComponent } from './Common/components/main-layout/main-layout.component';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { faAddressCard, faHome } from '@fortawesome/free-solid-svg-icons';
 
 export const routes: Routes = [
   {
@@ -14,11 +14,20 @@ export const routes: Routes = [
     component: MainLayoutComponent,
     children: [
       {
-        path: '',
+        path: 'home',
         loadChildren: () =>
           import('./modules/home/home.module').then((m) => m.HomeModule),
         canActivate: [authGuard],
         data: { pageTitle: 'Home', icon: faHome },
+      },
+      {
+        path: 'members',
+        loadChildren: () =>
+          import('./modules/members/members.module').then(
+            (m) => m.MembersModule
+          ),
+        canActivate: [authGuard],
+        data: { pageTitle: 'Alunos', icon: faAddressCard },
       },
     ],
   },

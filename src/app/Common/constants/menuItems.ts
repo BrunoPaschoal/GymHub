@@ -14,7 +14,7 @@ export const MENU_DATA: IMenuCategory[] = [
     categoryName: 'Dashboard',
     menuItems: [
       {
-        path: '',
+        path: 'home',
         title: 'Home',
         icon: faHome,
       },
