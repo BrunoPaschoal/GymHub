@@ -1,1 +1,28 @@
-<p>members works!</p>
+<section>
+  <app-page-title title="Gestão de alunos" />
+  <div class="members-info-cards-container">
+    <app-simple-info-card
+      [amount]="membersInfo.registered.toString()"
+      title="Alunos"
+      highlightedText="cadastrados"
+      color="#FF6D60"
+      [icon]="registeredMembersIcon"
+    />
+
+    <app-simple-info-card
+      [amount]="membersInfo.matriculated.toString()"
+      title="Alunos"
+      highlightedText="matriculados"
+      color="#7DCF8A"
+      [icon]="matriculatedMembersIcon"
+    />
+
+    <app-simple-info-card
+      [amount]="membersInfo.inactive.toString()"
+      title="Alunos"
+      highlightedText="inativos"
+      color="#D34E4E"
+      [icon]="inactiveMembersIcon"
+    />
+  </div>
+</section>

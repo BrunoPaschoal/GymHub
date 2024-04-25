@@ -1,0 +1,48 @@
+:host {
+  display: flex;
+  flex: 1;
+
+  .simple-card {
+    cursor: pointer;
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    flex: 1;
+    min-width: 250px;
+    height: 90px;
+    background-color: white;
+    border-radius: 10px;
+
+    .icon-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 55px;
+      height: 55px;
+      border-radius: 100%;
+
+      .icon {
+        font-size: 1.3rem;
+        filter: brightness(70%);
+      }
+    }
+
+    .content {
+      margin-left: 15px;
+      flex: 1;
+      color: var(--primary-color);
+
+      .title {
+        font-size: 1.2rem;
+        font-weight: 300;
+        span {
+          font-weight: bold;
+        }
+      }
+
+      .amount {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
