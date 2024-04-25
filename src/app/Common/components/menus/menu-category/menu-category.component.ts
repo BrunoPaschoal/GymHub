@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IMenuCategory } from '../../interfaces/AppTypes';
-import { MenuItemComponent } from '../menu-item/menu-item.component';
+import { IMenuCategory } from '../../../interfaces/AppTypes';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faAngleDown, faAngleRight } from '@fortawesome/free-solid-svg-icons';
@@ -11,6 +10,7 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
+import { MenuItemComponent } from '../menu-item/menu-item.component';
 
 @Component({
   selector: 'app-menu-category',

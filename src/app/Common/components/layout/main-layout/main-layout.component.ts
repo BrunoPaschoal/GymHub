@@ -8,10 +8,10 @@ import {
 } from '@angular/router';
 import { ProfileLoggedComponent } from '../profile-logged/profile-logged.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { AuthService } from '../../../modules/auth/services/auth.service';
+import { AuthService } from '../../../../modules/auth/services/auth.service';
 import { Subscription, filter } from 'rxjs';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { SideMenuComponent } from '../side-menu/side-menu.component';
+import { SideMenuComponent } from '../../menus/side-menu/side-menu.component';
 
 @Component({
   selector: 'app-main-layout',

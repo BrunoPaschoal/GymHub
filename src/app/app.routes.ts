@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './guards/auth.guard';
-import { MainLayoutComponent } from './Common/components/main-layout/main-layout.component';
+import { MainLayoutComponent } from './Common/components/layout/main-layout/main-layout.component';
 import { faAddressCard, faHome } from '@fortawesome/free-solid-svg-icons';
 
 export const routes: Routes = [

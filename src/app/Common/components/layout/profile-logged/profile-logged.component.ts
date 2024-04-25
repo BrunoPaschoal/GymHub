@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AvatarModule } from 'primeng/avatar';
-import { AuthService } from '../../../modules/auth/services/auth.service';
+import { AuthService } from '../../../../modules/auth/services/auth.service';
 import { MenuModule } from 'primeng/menu';
-import { ContextMenuItems } from '../../interfaces/AppTypes';
+import { ContextMenuItems } from '../../../interfaces/AppTypes';
 
 @Component({
   selector: 'app-profile-logged',

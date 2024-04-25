@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { IMenuItem } from '../../interfaces/AppTypes';
+import { IMenuItem } from '../../../interfaces/AppTypes';
 
 @Component({
   selector: 'app-menu-item',
