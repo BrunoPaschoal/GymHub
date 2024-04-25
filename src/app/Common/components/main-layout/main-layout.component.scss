@@ -1,5 +1,6 @@
 :host {
   display: flex;
+  height: 100%;
 
   .right-container{
     display: flex;
@@ -37,8 +38,17 @@
   }
 
   .app-container {
+    display: flex;
+    justify-content: center;
     flex: 1;
-    padding: 50px 50px 50px 50px;
+    overflow: auto;
+    padding: 40px;
+
+    .app-content-container {
+      min-height: 100%;
+      max-width: 1200px;
+      width: 100%;
+    }
   }
 }
 
