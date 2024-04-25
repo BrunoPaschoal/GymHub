@@ -1,0 +1,16 @@
+:host {
+  div {
+    width: max-content;
+    .page-title {
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      font-weight: 300;
+    }
+    .dash {
+      height: 4px;
+      width: 40%;
+      margin-left: 2px;
+      background-color: var(--primary-color);
+    }
+  }
+}
