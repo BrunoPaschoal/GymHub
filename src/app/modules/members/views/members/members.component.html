@@ -7,6 +7,8 @@
       highlightedText="cadastrados"
       color="#FF6D60"
       [icon]="registeredMembersIcon"
+      id="registered"
+      (cardClicked)="onSimpleCardClick($event)"
     />
 
     <app-simple-info-card
@@ -15,6 +17,8 @@
       highlightedText="matriculados"
       color="#7DCF8A"
       [icon]="matriculatedMembersIcon"
+      (cardClicked)="onSimpleCardClick($event)"
+      id="matriculated"
     />
 
     <app-simple-info-card
@@ -23,6 +27,8 @@
       highlightedText="inativos"
       color="#D34E4E"
       [icon]="inactiveMembersIcon"
+      (cardClicked)="onSimpleCardClick($event)"
+      id="inactive"
     />
   </div>
 </section>

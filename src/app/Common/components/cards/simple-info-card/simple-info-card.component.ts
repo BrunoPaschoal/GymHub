@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
@@ -13,6 +13,12 @@ export class SimpleInfoCardComponent {
   @Input({ required: true }) title: string = '';
   @Input({ required: true }) color: string = '';
   @Input({ required: true }) icon!: IconProp;
+  @Input() id: string = '';
   @Input() highlightedText: string = '';
   @Input() amount: string = '';
+  @Output() cardClicked = new EventEmitter<string>();
+
+  onCardClick(value: string) {
+    this.cardClicked.emit(value);
+  }
 }

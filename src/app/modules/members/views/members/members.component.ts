@@ -25,4 +25,8 @@ export class MembersComponent {
     matriculated: 220,
     inactive: 307,
   };
+
+  onSimpleCardClick(cardId: string) {
+    // Implementar filtro na lista de alunos
+  }
 }

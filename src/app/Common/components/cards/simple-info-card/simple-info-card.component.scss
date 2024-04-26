@@ -12,6 +12,11 @@
     height: 90px;
     background-color: white;
     border-radius: 10px;
+    transition: opacity 100ms ease-in-out;
+
+    &:active {
+      opacity: 0.6;
+    }
 
     .icon-container {
       display: flex;
