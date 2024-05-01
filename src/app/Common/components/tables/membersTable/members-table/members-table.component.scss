@@ -1,0 +1,39 @@
+:host ::ng-deep {
+  .p-datatable {
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .members-table-container {
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+
+    .table-tool-bar {
+      display: flex;
+      border-bottom: dashed #cecece 1px;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .member-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .actions-container {
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      .p-button {
+        padding: 8px 15px;
+        border-radius: 6px;
+        span {
+          font-size: .75rem;
+        }
+      }
+    }
+  }
+}

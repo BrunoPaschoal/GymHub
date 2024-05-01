@@ -1,6 +1,6 @@
 /// Padding of a button, must be defined with a shorthand for vertical and horizontal values e.g. ".5rem .5rem"
 /// @group button
-$buttonPadding: .9rem 1rem;
+$buttonPadding: .6rem 1rem;
 
 /// Width of a button having an icon with no label
 /// @group button
@@ -160,7 +160,7 @@ $infoButtonFocusShadow: 0 0 0 0.2rem lighten($infoButtonBg, 35%);
 
 /// Background of a success button
 /// @group button
-$successButtonBg: #4CAF50;
+$successButtonBg: #7DCF8A;
 
 /// Text color of a success button
 /// @group button
@@ -168,7 +168,7 @@ $successButtonTextColor: #ffffff;
 
 /// Border of a success button
 /// @group button
-$successButtonBorder: 1px solid #4CAF50;
+$successButtonBorder: 1px solid #7DCF8A;
 
 /// Background of a success button in hover state
 /// @group button
@@ -280,7 +280,7 @@ $helpButtonFocusShadow:0 0 0 0.2rem #CE93D8;
 
 /// Background of a danger button
 /// @group button
-$dangerButtonBg: #f44336;
+$dangerButtonBg: #D34E4E;
 
 /// Text color of a danger button
 /// @group button
@@ -288,7 +288,7 @@ $dangerButtonTextColor: #ffffff;
 
 /// Border of a danger button
 /// @group button
-$dangerButtonBorder: 1px solid #f44336;
+$dangerButtonBorder: 1px solid #D34E4E;
 
 /// Background of a danger button in hover state
 /// @group button

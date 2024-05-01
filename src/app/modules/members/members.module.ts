@@ -5,6 +5,7 @@ import { MembersComponent } from './views/members/members.component';
 import { membersRoutes } from './members.routes';
 import { PageTitleComponent } from '../../Common/components/text/page-title/page-title.component';
 import { SimpleInfoCardComponent } from '../../Common/components/cards/simple-info-card/simple-info-card.component';
+import { MembersTableComponent } from '../../Common/components/tables/membersTable/members-table/members-table.component';
 
 @NgModule({
   declarations: [MembersComponent],
@@ -13,6 +14,7 @@ import { SimpleInfoCardComponent } from '../../Common/components/cards/simple-in
     RouterModule.forChild(membersRoutes),
     PageTitleComponent,
     SimpleInfoCardComponent,
+    MembersTableComponent,
   ],
 })
 export class MembersModule {}

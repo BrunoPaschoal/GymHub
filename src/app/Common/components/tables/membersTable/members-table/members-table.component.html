@@ -1,0 +1,53 @@
+<div class="members-table-container">
+  <div class="table-tool-bar">
+    <p-button icon="pi pi-plus" label="Adicionar novo Aluno"></p-button>
+  </div>
+  <p-table
+    [value]="tableData"
+    styleClass="p-datatable-sm"
+    [scrollable]="true"
+    scrollHeight="700px"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="id">ID <p-sortIcon field="id"></p-sortIcon></th>
+        <th>Aluno</th>
+        <th>Telefone</th>
+        <th pSortableColumn="status">
+          Status <p-sortIcon field="status"></p-sortIcon>
+        </th>
+        <th>Ações</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-member>
+      <tr>
+        <td>{{ member.id }}</td>
+        <td class="member-container">
+          <p-avatar
+            [image]="member.avatar || undefined"
+            size="normal"
+            [icon]="!member.avatar ? 'pi pi-user' : ''"
+            shape="circle"
+            class="avatar"
+          ></p-avatar>
+          {{ member.name }}
+        </td>
+        <td>{{ member.phone }}</td>
+        <td>
+          <p-tag
+            [value]="member.status"
+            [severity]="getColorTag(member.status)"
+          ></p-tag>
+        </td>
+        <td class="actions-container">
+          <p-button
+            icon="pi pi-pencil"
+            label="Editar"
+            (click)="editMember(member)"
+          >
+          </p-button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

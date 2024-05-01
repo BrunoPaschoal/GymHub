@@ -5,7 +5,7 @@
       [amount]="membersInfo.registered.toString()"
       title="Alunos"
       highlightedText="cadastrados"
-      color="#FF6D60"
+      color="#FFC107"
       [icon]="registeredMembersIcon"
       id="registered"
       (cardClicked)="onSimpleCardClick($event)"
@@ -30,5 +30,8 @@
       (cardClicked)="onSimpleCardClick($event)"
       id="inactive"
     />
+  </div>
+  <div class="table-container">
+    <app-members-table [tableData]="members" />
   </div>
 </section>
